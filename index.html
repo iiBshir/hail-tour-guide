@@ -3,20 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرشد سياحي في حائل | بشر العيسى</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title id="title">مرشد سياحي في حائل | بشر العيسى</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script> <!-- استدعاء ملف الترجمة -->
+    <style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f5e1c0;
+            text-align: right;
+            direction: rtl;
+            margin: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .language-switch {
+            text-align: center;
+            margin: 20px;
+        }
+        .language-switch button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #7a4c2f;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
-    <header>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
+    <div class="container">
         <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
         <p id="description">اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة.</p>
-        <nav>
-            <a href="about-hail.html">🏜️</a>
-            <a href="about-me.html">👤</a>
-            <a href="tours.html">🚶‍♂️</a>
-            <a href="contact.html">📞</a>
-        </nav>
-    </header>
+        <a href="about-hail.html">🏜️</a>
+        <a href="about-me.html">👤</a>
+        <a href="tours.html">🚶‍♂️</a>
+        <a href="contact.html">📞</a>
+    </div>
+
 </body>
 </html>
