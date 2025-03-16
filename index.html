@@ -24,6 +24,14 @@
             text-align: center;
             font-weight: bold;
         }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
         .nav-menu {
             display: flex;
             justify-content: center;
@@ -62,16 +70,19 @@
     <header>
         <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
     </header>
+
     <div class="language-switch">
         <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
         <button onclick="setLanguage('en')">🇬🇧 English</button>
     </div>
+
     <div class="nav-menu">
         <a id="about-link" href="about-hail.html">تعريف عن حائل</a>
         <a id="about-me-link" href="about-me.html">نبذة عني</a>
         <a id="tours-link" href="tours.html">جولاتي السياحية</a>
         <a id="contact-link" href="contact.html">تواصل معي</a>
     </div>
+
     <script>
         const translations = {
             ar: {
