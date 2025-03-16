@@ -6,51 +6,112 @@
     <title>مرشد سياحي في حائل | بشر العيسى</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Traditional Arabic', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            text-align: center;
+            background-color: #f5e1c0;
+            text-align: right;
+            direction: rtl;
         }
         header {
             background-color: #8B5A2B;
             color: white;
             padding: 20px;
             font-size: 24px;
+            text-align: center;
         }
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 20px auto;
             background: white;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            background-color: #8B5A2B;
+        .sidebar {
+            width: 250px;
+            background-color: #7a4c2f;
+            color: white;
+            position: fixed;
+            height: 100%;
+            padding: 20px;
+            top: 0;
+            right: 0;
+            text-align: right;
+        }
+        .sidebar a {
+            display: block;
             color: white;
             text-decoration: none;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #5e3b28;
             border-radius: 5px;
         }
-        .btn:hover {
-            background-color: #6A3E1A;
+        .sidebar a:hover {
+            background-color: #a86d3b;
+        }
+        .content {
+            margin-right: 270px;
+            padding: 20px;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .images img {
+            width: 45%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>مرشد سياحي في حائل - بشر العيسى</header>
-    <div class="container">
-        <h2>اكتشف حائل مع أفضل مرشد سياحي</h2>
-        <p>أهلاً بك! أنا بشر العيسى، مرشد سياحي محترف في منطقة حائل. استمتع بجولات سياحية مخصصة لاستكشاف المعالم التاريخية والطبيعية.</p>
-        <a href="#contact" class="btn">اتصل بي</a>
+    <div class="sidebar">
+        <h3>القائمة</h3>
+        <a href="#about-hail">تعريف عن حائل</a>
+        <a href="#about-me">نبذة عني</a>
+        <a href="#tours">جولاتي السياحية</a>
+        <a href="#contact">تواصل معي</a>
     </div>
-    <div class="container" id="contact">
-        <h3>تواصل معي</h3>
-        <p>للحجز أو الاستفسار، يمكنك التواصل عبر:</p>
-        <p>📞 الهاتف: 0500000000</p>
-        <p>📧 البريد الإلكتروني: tourguide@hail.com</p>
+    <div class="content">
+        <div class="container" id="about-hail">
+            <h3>تعريف عن حائل</h3>
+            <p>حائل هي إحدى المناطق التاريخية في المملكة العربية السعودية، وتشتهر بجمال طبيعتها الصحراوية وجبالها المميزة، مثل جبل أجا وسلمى، بالإضافة إلى تراثها الغني بالنقوش الثمودية.</p>
+        </div>
+        <div class="container" id="about-me">
+            <h3>نبذة عني</h3>
+            <p>أنا بشر العيسى، مرشد سياحي حامل رخصة من هيئة السياحة في المملكة العربية السعودية. أقدم جولات سياحية لاكتشاف التراث والثقافة العريقة لمنطقة حائل.</p>
+        </div>
+        <div class="container" id="tours">
+            <h3>جولاتي السياحية</h3>
+            <p>استمتع بجولات مميزة تشمل زيارة النقوش الثمودية والمواقع التراثية والتعرف على ثقافة المنطقة.</p>
+            <div class="images">
+                <img src="thamudic_inscriptions.jpg" alt="نقوش ثمودية في حائل">
+                <img src="heritage_site.jpg" alt="موقع تراثي في حائل">
+            </div>
+            <div class="video-container">
+                <h4>شاهد جولاتنا السياحية</h4>
+                <video width="80%" controls>
+                    <source src="tour_video.mp4" type="video/mp4">
+                    المتصفح لا يدعم تشغيل الفيديو.
+                </video>
+            </div>
+        </div>
+        <div class="container" id="contact">
+            <h3>تواصل معي</h3>
+            <p>للحجز أو الاستفسار، يمكنك التواصل عبر الجوال أو الإيميل:</p>
+            <p>📞 الهاتف: 0534194016</p>
+            <p>📧 البريد الإلكتروني: tourguide@hail.com</p>
+        </div>
     </div>
 </body>
 </html>
