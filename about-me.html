@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نبذة عني</title>
+    <title id="title">نبذة عني</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -21,14 +21,69 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        a { text-decoration: none; color: #7a4c2f; font-weight: bold; }
+        .language-switch {
+            text-align: center;
+            margin: 20px;
+        }
+        .language-switch button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #7a4c2f;
+            color: white;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .language-switch button:hover {
+            background-color: #9b6d48;
+        }
+        a {
+            text-decoration: none;
+            color: #7a4c2f;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>نبذة عني</h1>
-        <p>أنا بشر العيسى، مرشد سياحي مرخص في مدينة حائل من هيئة السياحة في المملكة العربية السعودية. أقدم جولات سياحية لاكتشاف التراث والثقافة العربية لمنطقة حائل.</p>
-        <a href="index.html">🔙 العودة إلى الصفحة الرئيسية</a>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
     </div>
+
+    <div class="container">
+        <h1 id="title">نبذة عني</h1>
+        <p id="about-text">أنا بشر العيسى، مرشد سياحي مرخص في مدينة حائل من هيئة السياحة في المملكة العربية السعودية. أقدم جولات سياحية لاكتشاف التراث والثقافة العربية لمنطقة حائل.</p>
+        <a href="index.html" id="home-link">🔙 العودة إلى الصفحة الرئيسية</a>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
+            setLanguage(savedLang);
+        });
+
+        const translations = {
+            ar: {
+                title: "نبذة عني",
+                aboutText: "أنا بشر العيسى، مرشد سياحي مرخص في مدينة حائل من هيئة السياحة في المملكة العربية السعودية. أقدم جولات سياحية لاكتشاف التراث والثقافة العربية لمنطقة حائل.",
+                homeLink: "🔙 العودة إلى الصفحة الرئيسية"
+            },
+            en: {
+                title: "About Me",
+                aboutText: "I am Bisher Al-Eisa, a licensed tour guide in Hail City by the Saudi Tourism Authority. I offer tours to explore the heritage and culture of the Hail region.",
+                homeLink: "🔙 Back to Home"
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("about-text").innerText = translations[lang].aboutText;
+            document.getElementById("home-link").innerText = translations[lang].homeLink;
+        }
+    </script>
+
 </body>
 </html>
