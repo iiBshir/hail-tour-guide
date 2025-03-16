@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عن حائل</title>
+    <title id="title">عن حائل</title>
 </head>
 <body>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
     <div class="container">
-        <h1>عن حائل</h1>
-        <p>حائل هي واحدة من أقدم المناطق في المملكة العربية السعودية، حيث تضم نقوشًا ثمودية تاريخية وتراثًا ثقافيًا غنيًا.</p>
+        <h1 id="title">عن حائل</h1>
+        <p id="description">حائل هي واحدة من أقدم المناطق في المملكة العربية السعودية، حيث تضم نقوشًا ثمودية تاريخية وتراثًا ثقافيًا غنيًا.</p>
         <a href="index.html">⬅️ العودة</a>
     </div>
+
+    <script>
+        const translations = {
+            ar: { title: "عن حائل", description: "حائل هي واحدة من أقدم المناطق في المملكة العربية السعودية، حيث تضم نقوشًا ثمودية تاريخية وتراثًا ثقافيًا غنيًا." },
+            en: { title: "About Hail", description: "Hail is one of the oldest regions in Saudi Arabia, featuring Thamudic inscriptions and a rich cultural heritage." }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("description").innerText = translations[lang].description;
+        }
+
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
+
 </body>
 </html>
