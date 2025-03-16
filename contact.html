@@ -7,44 +7,35 @@
 </head>
 <body>
     <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('ar')">🇸🇦</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
     <div class="container">
         <h1 id="title">تواصل معي</h1>
-        <p id="contact-text">يمكنك التواصل معي للحجز أو الاستفسار عبر:</p>
+        <p id="content">يمكنك التواصل معي عبر الهاتف أو البريد الإلكتروني لحجز جولة سياحية أو الاستفسار عن خدماتي.</p>
         <ul>
             <li>📞 الهاتف: <a href="tel:+966534194016">0534194016</a></li>
             <li>📧 البريد الإلكتروني: <a href="mailto:tourguide@hail.com">tourguide@hail.com</a></li>
             <li>💬 واتساب: <a href="https://wa.me/966534194016" target="_blank">اضغط هنا</a></li>
         </ul>
-        <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
+        <a href="index.html" class="back-icon">⬅️</a>
     </div>
 
     <script>
         const translations = {
-            ar: {
-                title: "تواصل معي",
-                contactText: "يمكنك التواصل معي للحجز أو الاستفسار عبر:",
-                homeLink: "🔙 العودة للصفحة الرئيسية"
-            },
-            en: {
-                title: "Contact Me",
-                contactText: "You can contact me for booking or inquiries via:",
-                homeLink: "🔙 Back to Home"
-            }
+            ar: { title: "تواصل معي", content: "يمكنك التواصل معي عبر الهاتف أو البريد الإلكتروني لحجز جولة سياحية أو الاستفسار عن خدماتي." },
+            en: { title: "Contact Me", content: "You can contact me via phone or email to book a tour or inquire about my services." }
         };
 
         function setLanguage(lang) {
             localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
             document.getElementById("title").innerText = translations[lang].title;
-            document.getElementById("contact-text").innerText = translations[lang].contactText;
-            document.getElementById("home-link").innerText = translations[lang].homeLink;
+            document.getElementById("content").innerText = translations[lang].content;
         }
 
-        const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
-        setLanguage(savedLang);
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
     </script>
 </body>
 </html>
