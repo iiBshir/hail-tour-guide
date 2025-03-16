@@ -25,29 +25,35 @@
         <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
     </div>
 
-    <script>
-        const translations = {
-            ar: {
-                title: "تعريف عن حائل",
-                hailText: "حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.",
-                homeLink: "🔙 العودة للصفحة الرئيسية"
-            },
-            en: {
-                title: "About Hail",
-                hailText: "Hail is one of the most beautiful regions in Saudi Arabia, famous for its unique mountains and ancient Thamudic inscriptions.",
-                homeLink: "🔙 Back to Home"
-            }
-        };
-
-        function setLanguage(lang) {
-            localStorage.setItem('selectedLanguage', lang);
-            document.getElementById("title").innerText = translations[lang].title;
-            document.getElementById("hail-text").innerText = translations[lang].hailText;
-            document.getElementById("home-link").innerText = translations[lang].homeLink;
-        }
-
+  <script>
+    // التأكد من تحميل اللغة المختارة فورًا عند فتح الصفحة
+    document.addEventListener("DOMContentLoaded", function() {
         const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
         setLanguage(savedLang);
-    </script>
+    });
+
+    // تعريف الترجمات
+    const translations = {
+        ar: {
+            title: "تعريف عن حائل",
+            hailText: "حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.",
+            homeLink: "🔙 العودة للصفحة الرئيسية"
+        },
+        en: {
+            title: "About Hail",
+            hailText: "Hail is one of the most beautiful regions in Saudi Arabia, famous for its unique mountains and ancient Thamudic inscriptions.",
+            homeLink: "🔙 Back to Home"
+        }
+    };
+
+    // وظيفة تغيير اللغة
+    function setLanguage(lang) {
+        localStorage.setItem('selectedLanguage', lang); // حفظ اللغة المختارة
+        document.getElementById("title").innerText = translations[lang].title;
+        document.getElementById("hail-text").innerText = translations[lang].hailText;
+        document.getElementById("home-link").innerText = translations[lang].homeLink;
+    }
+</script>
+
 </body>
 </html>
