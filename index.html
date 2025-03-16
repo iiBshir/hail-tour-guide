@@ -61,22 +61,28 @@
             border-radius: 5px;
             margin: 5px;
         }
+        .language-switch button:hover {
+            background-color: #9b6d48;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
     </header>
+
     <div class="language-switch">
         <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
         <button onclick="setLanguage('en')">🇬🇧 English</button>
     </div>
+
     <div class="nav-menu">
         <a id="about-link" href="about-hail.html">تعريف عن حائل</a>
         <a id="about-me-link" href="about-me.html">نبذة عني</a>
         <a id="tours-link" href="tours.html">جولاتي السياحية</a>
         <a id="contact-link" href="contact.html">تواصل معي</a>
     </div>
+
     <script>
         const translations = {
             ar: {
