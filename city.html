@@ -3,13 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مدينة حائل</title>
+    <title id="title">مدينة حائل</title>
 </head>
 <body>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
     <div class="container">
-        <h1>مدينة حائل</h1>
-        <p>حائل هي العاصمة الإدارية لمنطقة حائل، وتشتهر بموقعها الاستراتيجي ومعالمها السياحية.</p>
+        <h1 id="title">مدينة حائل</h1>
+        <p id="description">حائل هي العاصمة الإدارية لمنطقة حائل، وتتميز بموقعها الجغرافي الاستراتيجي ومعالمها التاريخية والطبيعية.</p>
         <a href="index.html">⬅️ العودة</a>
     </div>
-</body>
-</html>
+
+    <script>
+        const translations = {
+            ar: { title: "مدينة حائل", description: "حائل هي العاصمة الإدارية لمنطقة حائل، وتتميز بموقعها الجغرافي الاستراتيجي ومعالمها التاريخية والطبيعية." },
+            en: { title: "Hail City", description: "Hail is the administrative capital of the Hail region, known for its strategic location and historical and natural landmarks." }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("description").innerText = translations[lang].description;
+        }
+
+        setLanguage(localStorage.getItem('selected
