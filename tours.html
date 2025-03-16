@@ -3,15 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جولاتي السياحية</title>
+    <title id="title">جولاتي السياحية</title>
 </head>
 <body>
-    <h1>جولاتي السياحية</h1>
-    <p>جولات تشمل زيارة المواقع التراثية والنقوش الثمودية والتجول في الطبيعة الساحرة.</p>
-    <ul>
-        <li>📍 نقوش ثمودية في حائل</li>
-        <li>🏜️ منتزهات جبلية ساحرة</li>
-    </ul>
-    <a href="index.html">🔙 العودة للصفحة الرئيسية</a>
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
+    <div class="container">
+        <h1 id="title">جولاتي السياحية</h1>
+        <p id="tours-text">جولات تشمل زيارة المواقع التراثية والنقوش الثمودية والتجول في الطبيعة الساحرة.</p>
+        <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
+    </div>
+
+    <script>
+        const translations = {
+            ar: {
+                title: "جولاتي السياحية",
+                toursText: "جولات تشمل زيارة المواقع التراثية والنقوش الثمودية والتجول في الطبيعة الساحرة.",
+                homeLink: "🔙 العودة للصفحة الرئيسية"
+            },
+            en: {
+                title: "My Tours",
+                toursText: "Tours include visiting heritage sites, Thamudic inscriptions, and exploring the beautiful nature.",
+                homeLink: "🔙 Back to Home"
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("tours-text").innerText = translations[lang].toursText;
+            document.getElementById("home-link").innerText = translations[lang].homeLink;
+        }
+
+        const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
+        setLanguage(savedLang);
+    </script>
 </body>
 </html>
