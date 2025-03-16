@@ -7,20 +7,20 @@
 </head>
 <body>
     <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('ar')">🇸🇦</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
     <div class="container">
         <h1 id="title">تعريف عن حائل</h1>
         <p id="content">حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.</p>
-        <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
+        <a href="index.html" class="back-icon">⬅️</a>
     </div>
 
     <script>
         const translations = {
-            ar: { title: "تعريف عن حائل", content: "حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.", homeLink: "🔙 العودة للصفحة الرئيسية" },
-            en: { title: "About Hail", content: "Hail is one of the most beautiful regions in Saudi Arabia, famous for its unique mountains and ancient Thamudic inscriptions.", homeLink: "🔙 Back to Home" }
+            ar: { title: "تعريف عن حائل", content: "حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية." },
+            en: { title: "About Hail", content: "Hail is one of the most beautiful regions in Saudi Arabia, famous for its unique mountains and ancient Thamudic inscriptions." }
         };
 
         function setLanguage(lang) {
@@ -28,7 +28,6 @@
             document.documentElement.lang = lang;
             document.getElementById("title").innerText = translations[lang].title;
             document.getElementById("content").innerText = translations[lang].content;
-            document.getElementById("home-link").innerText = translations[lang].homeLink;
         }
 
         setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
