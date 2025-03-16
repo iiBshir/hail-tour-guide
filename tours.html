@@ -7,45 +7,30 @@
 </head>
 <body>
     <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('ar')">🇸🇦</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
     <div class="container">
         <h1 id="title">جولاتي السياحية</h1>
-        <p id="tours-text">جولات تشمل زيارة المواقع التراثية والنقوش الثمودية والتجول في الطبيعة الساحرة.</p>
-        <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
+        <p id="content">استمتع بجولات سياحية فريدة في حائل تشمل زيارة النقوش الثمودية، القرى التراثية، والمعالم الطبيعية.</p>
+        <a href="index.html" class="back-icon">⬅️</a>
     </div>
 
     <script>
-    // التأكد من تحميل اللغة المختارة فورًا عند فتح الصفحة
-    document.addEventListener("DOMContentLoaded", function() {
-        const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
-        setLanguage(savedLang);
-    });
+        const translations = {
+            ar: { title: "جولاتي السياحية", content: "استمتع بجولات سياحية فريدة في حائل تشمل زيارة النقوش الثمودية، القرى التراثية، والمعالم الطبيعية." },
+            en: { title: "My Tours", content: "Enjoy unique tours in Hail, including visits to Thamudic inscriptions, heritage villages, and natural landmarks." }
+        };
 
-    // تعريف الترجمات
-    const translations = {
-        ar: {
-            title: "تعريف عن حائل",
-            hailText: "حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.",
-            homeLink: "🔙 العودة للصفحة الرئيسية"
-        },
-        en: {
-            title: "About Hail",
-            hailText: "Hail is one of the most beautiful regions in Saudi Arabia, famous for its unique mountains and ancient Thamudic inscriptions.",
-            homeLink: "🔙 Back to Home"
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("content").innerText = translations[lang].content;
         }
-    };
 
-    // وظيفة تغيير اللغة
-    function setLanguage(lang) {
-        localStorage.setItem('selectedLanguage', lang); // حفظ اللغة المختارة
-        document.getElementById("title").innerText = translations[lang].title;
-        document.getElementById("hail-text").innerText = translations[lang].hailText;
-        document.getElementById("home-link").innerText = translations[lang].homeLink;
-    }
-</script>
-
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
 </body>
 </html>
