@@ -6,108 +6,54 @@
     <title id="title">مرشد سياحي في حائل | بشر العيسى</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5e1c0;
-            text-align: right;
-            direction: rtl;
-        }
-        header {
-            background-image: url('hail_landscape.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 100px 20px;
-            font-size: 28px;
-            text-align: center;
-            font-weight: bold;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            background-color: #7a4c2f;
-            padding: 15px;
-        }
-        .nav-menu a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 18px;
-        }
-        .nav-menu a:hover {
-            text-decoration: underline;
-        }
-        .language-switch {
-            text-align: center;
-            margin: 20px;
-        }
-        .language-switch button {
-            padding: 10px 15px;
-            font-size: 16px;
-            cursor: pointer;
-            border: none;
-            background-color: #7a4c2f;
-            color: white;
-            border-radius: 5px;
-            margin: 5px;
-        }
-        .language-switch button:hover {
-            background-color: #9b6d48;
-        }
+        body { font-family: 'Tajawal', sans-serif; background-color: #f5e1c0; text-align: right; direction: rtl; margin: 20px; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 10px; text-align: center; }
+        .language-switch { margin: 20px; }
+        .language-switch button { padding: 10px; font-size: 16px; cursor: pointer; border: none; background-color: #7a4c2f; color: white; border-radius: 5px; margin: 5px; transition: 0.3s; }
+        .language-switch button:hover { background-color: #9b6d48; transform: scale(1.1); }
+        .back-icon { font-size: 24px; text-decoration: none; color: #7a4c2f; display: inline-block; margin-top: 10px; }
     </style>
 </head>
 <body>
-    <header>
-        <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
-    </header>
 
     <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('ar')">🇸🇦</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
-    <div class="nav-menu">
-        <a id="about-link" href="about-hail.html">تعريف عن حائل</a>
-        <a id="about-me-link" href="about-me.html">نبذة عني</a>
-        <a id="tours-link" href="tours.html">جولاتي السياحية</a>
-        <a id="contact-link" href="contact.html">تواصل معي</a>
+    <div class="container">
+        <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
+        <p id="description">اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة.</p>
+        <a href="about-hail.html">🏜️</a>
+        <a href="about-me.html">👤</a>
+        <a href="tours.html">🚶‍♂️</a>
+        <a href="contact.html">📞</a>
     </div>
+
+    <button onclick="scrollToTop()" id="scrollTopBtn" style="position: fixed; bottom: 20px; right: 20px; padding: 10px; background-color: #7a4c2f; color: white; border: none; border-radius: 5px; cursor: pointer; display: none;">
+        ⬆️
+    </button>
 
     <script>
+        document.documentElement.lang = localStorage.getItem('selectedLanguage') || 'ar';
+
         const translations = {
-            ar: {
-                title: "مرشد سياحي في حائل - بشر العيسى",
-                about: "تعريف عن حائل",
-                aboutMe: "نبذة عني",
-                tours: "جولاتي السياحية",
-                contact: "تواصل معي"
-            },
-            en: {
-                title: "Tour Guide in Hail - Bisher Al-Eisa",
-                about: "About Hail",
-                aboutMe: "About Me",
-                tours: "My Tours",
-                contact: "Contact Me"
-            }
+            ar: { title: "مرشد سياحي في حائل - بشر العيسى", description: "اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة." },
+            en: { title: "Tour Guide in Hail - Bisher Al-Eisa", description: "Explore Hail with the best tour guide, enjoy amazing heritage and cultural tours." }
         };
 
         function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
             document.getElementById("title").innerText = translations[lang].title;
-            document.getElementById("about-link").innerText = translations[lang].about;
-            document.getElementById("about-me-link").innerText = translations[lang].aboutMe;
-            document.getElementById("tours-link").innerText = translations[lang].tours;
-            document.getElementById("contact-link").innerText = translations[lang].contact;
+            document.getElementById("description").innerText = translations[lang].description;
         }
+
+        window.onscroll = function() { document.getElementById("scrollTopBtn").style.display = window.scrollY > 100 ? "block" : "none"; };
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: "smooth" }); }
+
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
     </script>
+
 </body>
 </html>
