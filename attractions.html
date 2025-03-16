@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المعالم السياحية في حائل</title>
+    <title id="title">المعالم السياحية</title>
 </head>
 <body>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
     <div class="container">
-        <h1>المعالم السياحية</h1>
+        <h1 id="title">المعالم السياحية</h1>
         <ul>
             <li>🏜️ <b>مدينة جبة:</b> تحتوي على نقوش صخرية تاريخية.</li>
             <li>🏕️ <b>جبال أجا وسلمى:</b> مثالية للتخييم والمغامرات.</li>
@@ -15,5 +21,21 @@
         </ul>
         <a href="index.html">⬅️ العودة</a>
     </div>
+
+    <script>
+        const translations = {
+            ar: { title: "المعالم السياحية", description: "استمتع بجولات سياحية لاكتشاف المعالم الأثرية والطبيعية في حائل." },
+            en: { title: "Tourist Attractions", description: "Enjoy guided tours to explore the historical and natural landmarks of Hail." }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+        }
+
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
+
 </body>
 </html>
