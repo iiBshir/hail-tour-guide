@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>خدماتنا</title>
+    <title id="title">خدماتنا</title>
 </head>
 <body>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
     <div class="container">
-        <h1>💼 خدماتنا</h1>
+        <h1 id="title">خدماتنا</h1>
         <ul>
             <li>🏜️ تنظيم جولات سياحية داخل حائل وخارجها.</li>
             <li>🏕️ تجربة تخييم وسط الطبيعة الخلابة.</li>
@@ -16,5 +22,21 @@
         </ul>
         <a href="index.html">⬅️ العودة</a>
     </div>
+
+    <script>
+        const translations = {
+            ar: { title: "خدماتنا", description: "نقدم مجموعة من الخدمات السياحية المميزة في حائل." },
+            en: { title: "Our Services", description: "We offer a range of premium tourism services in Hail." }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+        }
+
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
+
 </body>
 </html>
