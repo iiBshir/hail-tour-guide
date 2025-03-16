@@ -3,37 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جولاتي السياحية</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #f5e1c0;
-            text-align: right;
-            direction: rtl;
-            margin: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-        }
-        a { text-decoration: none; color: #7a4c2f; font-weight: bold; }
-    </style>
+    <title id="title">جولاتي السياحية</title>
 </head>
 <body>
-    <div class="container">
-        <h1>جولاتي السياحية</h1>
-        <p>استمتع بجولات سياحية تشمل زيارة النقوش الثمودية والمواقع التراثية والتعرف على ثقافة المنطقة.</p>
-        <h3>📍 أماكن الجولات:</h3>
-        <ul>
-            <li>نقوش ثمودية في حائل</li>
-            <li>موقع لمنتزه في حائل</li>
-        </ul>
-        <a href="index.html">🔙 العودة إلى الصفحة الرئيسية</a>
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
     </div>
+
+    <div class="container">
+        <h1 id="title">جولاتي السياحية</h1>
+        <p id="tours-text">جولات تشمل زيارة المواقع التراثية والنقوش الثمودية والتجول في الطبيعة الساحرة.</p>
+        <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
+    </div>
+
+    <script>
+        const translations = {
+            ar: {
+                title: "جولاتي السياحية",
+                toursText: "جولات تشمل زيارة المواقع التراثية والنقوش الثمودية والتجول في الطبيعة الساحرة.",
+                homeLink: "🔙 العودة للصفحة الرئيسية"
+            },
+            en: {
+                title: "My Tours",
+                toursText: "Tours include visiting heritage sites, Thamudic inscriptions, and exploring the beautiful nature.",
+                homeLink: "🔙 Back to Home"
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("tours-text").innerText = translations[lang].toursText;
+            document.getElementById("home-link").innerText = translations[lang].homeLink;
+        }
+
+        const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
+        setLanguage(savedLang);
+    </script>
 </body>
 </html>
