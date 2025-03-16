@@ -4,66 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="title">مرشد سياحي في حائل | بشر العيسى</title>
-    <style>
-        body { font-family: 'Tajawal', sans-serif; text-align: center; background-color: #f5e1c0; margin: 0; padding: 0; }
-        .nav-menu { background-color: #7a4c2f; padding: 15px; }
-        .nav-menu a { color: white; text-decoration: none; margin: 10px; font-size: 18px; }
-        .nav-menu a:hover { text-decoration: underline; }
-        .container { max-width: 900px; margin: auto; background: white; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); border-radius: 10px; }
-        .language-switch { margin: 10px; }
-        .language-switch button { padding: 8px 12px; border: none; background-color: #7a4c2f; color: white; border-radius: 5px; cursor: pointer; }
-        .language-switch button:hover { background-color: #9b6d48; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="slider-container">
-    <div class="slider">
-        <img src="image1.jpg" class="slide active" alt="صورة 1">
-        <img src="image2.jpg" class="slide" alt="صورة 2">
-        <img src="image3.jpg" class="slide" alt="صورة 3">
-    </div>
-    <button class="prev" onclick="changeSlide(-1)">⏮️</button>
-    <button class="next" onclick="changeSlide(1)">⏭️</button>
-</div>
 
+    <!-- 🔹 زر اختيار اللغة -->
     <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
-    </div>
-<div class="banner">
-    <img src="hail-banner.jpg" alt="معالم حائل" style="width:100%; border-radius: 10px;">
-</div>
-
-    <div class="nav-menu">
-        <a href="about-hail.html">عن حائل</a>
-        <a href="city.html">المدينة</a>
-        <a href="attractions.html">المعالم السياحية</a>
-        <a href="services.html">خدماتنا</a>
-        <a href="news.html">أخبار</a>
-        <a href="contact.html">اتصل بنا</a>
+        <button onclick="setLanguage('ar')">🇸🇦</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
+    <!-- 🔹 عرض السلايدر -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="image1.jpg" class="slide active" alt="صورة 1">
+            <img src="image2.jpg" class="slide" alt="صورة 2">
+            <img src="image3.jpg" class="slide" alt="صورة 3">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">⏮️</button>
+        <button class="next" onclick="changeSlide(1)">⏭️</button>
+    </div>
+
+    <!-- 🔹 روابط الأقسام الرئيسية -->
     <div class="container">
-        <h1 id="title">مرحبًا بك في حائل</h1>
-        <p id="description">اكتشف معالم حائل مع أفضل المرشدين السياحيين. نقدم جولات سياحية فريدة لاستكشاف الأماكن التاريخية والطبيعة الساحرة.</p>
-        <img src="hail-landscape.jpg" alt="حائل" style="width:100%; border-radius: 10px;">
+        <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
+        <p id="description">اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة.</p>
+        <a href="about-hail.html">🏜️</a>
+        <a href="about-me.html">👤</a>
+        <a href="tours.html">🚶‍♂️</a>
+        <a href="contact.html">📞</a>
     </div>
 
-    <script>
-        const translations = {
-            ar: { title: "مرشد سياحي في حائل | بشر العيسى", description: "اكتشف معالم حائل مع أفضل المرشدين السياحيين. نقدم جولات سياحية فريدة لاستكشاف الأماكن التاريخية والطبيعة الساحرة." },
-            en: { title: "Tour Guide in Hail | Bisher Al-Eisa", description: "Discover Hail’s landmarks with the best tour guides. We offer unique tours to explore historical sites and natural beauty." }
-        };
+    <!-- 🔹 زر العودة للأعلى -->
+    <button onclick="scrollToTop()" id="scrollTopBtn">⬆️</button>
 
-        function setLanguage(lang) {
-            localStorage.setItem('selectedLanguage', lang);
-            document.documentElement.lang = lang;
-            document.getElementById("title").innerText = translations[lang].title;
-            document.getElementById("description").innerText = translations[lang].description;
-        }
-
-        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
