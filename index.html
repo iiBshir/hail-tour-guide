@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرشد سياحي في حائل | بشر العيسى</title>
+    <title id="title">مرشد سياحي في حائل | بشر العيسى</title>
     <style>
         body { font-family: 'Tajawal', sans-serif; text-align: center; background-color: #f5e1c0; margin: 0; padding: 0; }
         .nav-menu { background-color: #7a4c2f; padding: 15px; }
         .nav-menu a { color: white; text-decoration: none; margin: 10px; font-size: 18px; }
         .nav-menu a:hover { text-decoration: underline; }
         .container { max-width: 900px; margin: auto; background: white; padding: 20px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); border-radius: 10px; }
-        .services { background: #eae0d5; padding: 15px; margin-top: 20px; border-radius: 8px; }
-        .services h2 { color: #7a4c2f; }
+        .language-switch { margin: 10px; }
+        .language-switch button { padding: 8px 12px; border: none; background-color: #7a4c2f; color: white; border-radius: 5px; cursor: pointer; }
+        .language-switch button:hover { background-color: #9b6d48; }
     </style>
 </head>
 <body>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
 
     <div class="nav-menu">
         <a href="about-hail.html">عن حائل</a>
@@ -26,20 +32,26 @@
     </div>
 
     <div class="container">
-        <h1>مرحبًا بك في حائل</h1>
-        <p>اكتشف معالم حائل مع أفضل المرشدين السياحيين. نقدم جولات سياحية فريدة لاستكشاف الأماكن التاريخية والطبيعة الساحرة.</p>
+        <h1 id="title">مرحبًا بك في حائل</h1>
+        <p id="description">اكتشف معالم حائل مع أفضل المرشدين السياحيين. نقدم جولات سياحية فريدة لاستكشاف الأماكن التاريخية والطبيعة الساحرة.</p>
         <img src="hail-landscape.jpg" alt="حائل" style="width:100%; border-radius: 10px;">
-
-        <div class="services">
-            <h2>💼 خدماتنا</h2>
-            <p>نقدم خدمات سياحية مميزة تشمل:</p>
-            <ul>
-                <li>🏜️ جولات سياحية في معالم حائل</li>
-                <li>🏕️ تنظيم رحلات تخييم</li>
-                <li>📷 التصوير الاحترافي خلال الجولات</li>
-            </ul>
-        </div>
     </div>
+
+    <script>
+        const translations = {
+            ar: { title: "مرشد سياحي في حائل | بشر العيسى", description: "اكتشف معالم حائل مع أفضل المرشدين السياحيين. نقدم جولات سياحية فريدة لاستكشاف الأماكن التاريخية والطبيعة الساحرة." },
+            en: { title: "Tour Guide in Hail | Bisher Al-Eisa", description: "Discover Hail’s landmarks with the best tour guides. We offer unique tours to explore historical sites and natural beauty." }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("description").innerText = translations[lang].description;
+        }
+
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
 
 </body>
 </html>
