@@ -3,57 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">تعريف عن حائل</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Tajawal', sans-serif; background-color: #f5e1c0; text-align: right; direction: rtl; margin: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); border-radius: 10px; }
-        .language-switch { text-align: center; margin: 20px; }
-        .language-switch button { padding: 10px 15px; font-size: 16px; cursor: pointer; border: none; background-color: #7a4c2f; color: white; border-radius: 5px; margin: 5px; }
-        .language-switch button:hover { background-color: #9b6d48; }
-    </style>
+    <title id="title">نبذة عني</title>
 </head>
 <body>
     <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
+        <button onclick="setLanguage('ar')">🇸🇦</button>
+        <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
     <div class="container">
-        <h1 id="title">تعريف عن حائل</h1>
-        <p id="hail-text">حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.</p>
-        <a href="index.html" id="home-link">🔙 العودة للصفحة الرئيسية</a>
+        <h1 id="title">نبذة عني</h1>
+        <p id="content">أنا بشر العيسى، مرشد سياحي معتمد في مدينة حائل. أقدم جولات سياحية ممتعة لاستكشاف التراث والثقافة المحلية.</p>
+        <a href="index.html" class="back-icon">⬅️</a>
     </div>
 
-  <script>
-    // التأكد من تحميل اللغة المختارة فورًا عند فتح الصفحة
-    document.addEventListener("DOMContentLoaded", function() {
-        const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
-        setLanguage(savedLang);
-    });
+    <script>
+        const translations = {
+            ar: { title: "نبذة عني", content: "أنا بشر العيسى، مرشد سياحي معتمد في مدينة حائل. أقدم جولات سياحية ممتعة لاستكشاف التراث والثقافة المحلية." },
+            en: { title: "About Me", content: "I am Bisher Al-Eisa, a certified tour guide in Hail City. I offer enjoyable tours to explore the local heritage and culture." }
+        };
 
-    // تعريف الترجمات
-    const translations = {
-        ar: {
-            title: "تعريف عن حائل",
-            hailText: "حائل من أجمل مناطق المملكة العربية السعودية، تشتهر بجبالها الفريدة والنقوش الثمودية.",
-            homeLink: "🔙 العودة للصفحة الرئيسية"
-        },
-        en: {
-            title: "About Hail",
-            hailText: "Hail is one of the most beautiful regions in Saudi Arabia, famous for its unique mountains and ancient Thamudic inscriptions.",
-            homeLink: "🔙 Back to Home"
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("content").innerText = translations[lang].content;
         }
-    };
 
-    // وظيفة تغيير اللغة
-    function setLanguage(lang) {
-        localStorage.setItem('selectedLanguage', lang); // حفظ اللغة المختارة
-        document.getElementById("title").innerText = translations[lang].title;
-        document.getElementById("hail-text").innerText = translations[lang].hailText;
-        document.getElementById("home-link").innerText = translations[lang].homeLink;
-    }
-</script>
-
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
 </body>
 </html>
