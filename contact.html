@@ -3,19 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اتصل بنا</title>
+    <title id="title">اتصل بنا</title>
 </head>
 <body>
+
+    <div class="language-switch">
+        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+        <button onclick="setLanguage('en')">🇬🇧 English</button>
+    </div>
+
     <div class="container">
-        <h1>📞 اتصل بنا</h1>
-        <p>للحجوزات أو الاستفسارات، يمكنكم التواصل معنا عبر:</p>
+        <h1 id="title">اتصل بنا</h1>
+        <p id="description">للحجوزات أو الاستفسارات، يمكنكم التواصل معنا عبر:</p>
         <ul>
             <li>📞 الهاتف: <a href="tel:+966534194016">0534194016</a></li>
             <li>📧 البريد الإلكتروني: <a href="mailto:tourguide@hail.com">tourguide@hail.com</a></li>
             <li>💬 واتساب: <a href="https://wa.me/966534194016" target="_blank">اضغط هنا</a></li>
-            <li>📍 الموقع: حائل، المملكة العربية السعودية</li>
         </ul>
         <a href="index.html">⬅️ العودة</a>
     </div>
+
+    <script>
+        const translations = {
+            ar: { title: "اتصل بنا", description: "للحجوزات أو الاستفسارات، يمكنكم التواصل معنا عبر:" },
+            en: { title: "Contact Us", description: "For bookings or inquiries, you can contact us via:" }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem('selectedLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById("title").innerText = translations[lang].title;
+            document.getElementById("description").innerText = translations[lang].description;
+        }
+
+        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
+    </script>
+
 </body>
 </html>
