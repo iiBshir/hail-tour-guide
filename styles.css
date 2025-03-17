@@ -116,3 +116,27 @@ footer {
 .language-switch button:hover {
     background: #004c99;
 }
+/* تحسين تنسيق المعالم السياحية */
+.landmark {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    gap: 20px;
+}
+
+.landmark img {
+    width: 200px;
+    border-radius: 10px;
+}
+
+/* تحسين تنسيق الخدمات */
+.services-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+.services-list li {
+    font-size: 18px;
+    margin: 10px 0;
+}
