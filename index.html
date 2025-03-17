@@ -1,73 +1,86 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرشد سياحي في حائل | بشر العيسى</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>مرشد سياحي في حائل</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            background-color: #f4e1d2;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #8B5A2B;
+            padding: 10px;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+        }
+        li {
+            display: inline;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+        a:hover {
+            background-color: #654321;
+            border-radius: 5px;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .images img {
+            width: 300px;
+            height: auto;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .images img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
 
-    <!-- 🔹 الشريط العلوي -->
-    <header>
-        <div class="logo">
-            <h1>مرشد سياحي في حائل</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="about-hail.html">عن حائل</a></li>
-                <li><a href="landmarks.html">المعالم</a></li>
-                <li><a href="services.html">الخدمات</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
-            </ul>
-        </nav>
-        <div class="language-switch">
-            <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-            <button onclick="setLanguage('en')">🇬🇧 English</button>
-        </div>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about.html">عن حائل</a></li>
+            <li><a href="landmarks.html">المعالم</a></li>
+            <li><a href="services.html">الخدمات</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+        </ul>
+    </nav>
 
-    <!-- 🔹 السلايدر -->
-    <div class="slider-container">
-        <div class="slider">
-            <img src="images/hail1.jpg" class="slide active" alt="حائل">
-            <img src="images/hail2.jpg" class="slide" alt="حائل 2">
-            <img src="images/hail3.jpg" class="slide" alt="حائل 3">
+    <div class="container">
+        <h1>مرشد سياحي في حائل</h1>
+        <p>اكتشف أجمل المعالم السياحية في منطقة حائل مع أفضل دليل سياحي.</p>
+
+        <div class="images">
+            <a href="landmarks.html"><img src="image1.jpg" alt="معلم سياحي 1"></a>
+            <a href="landmarks.html"><img src="image2.jpg" alt="معلم سياحي 2"></a>
+            <a href="landmarks.html"><img src="image3.jpg" alt="معلم سياحي 3"></a>
         </div>
-        <button class="prev" onclick="changeSlide(-1)">⏮️</button>
-        <button class="next" onclick="changeSlide(1)">⏭️</button>
     </div>
-
-    <!-- 🔹 قسم عن حائل -->
-    <section class="about-hail">
-        <h2>عن حائل</h2>
-        <p>
-            تقع منطقة حائل في منتصف الجزء الشمالي الغربي من المملكة العربية السعودية، وتمتد من النفود الكبير شمالًا إلى حرة خيبر جنوبًا.
-            تشتهر بجبل أجا وسلمى، وتحتوي على نقوش ثمودية تعود إلى آلاف السنين، مما يجعلها وجهة سياحية غنية بالتاريخ والثقافة.
-        </p>
-    </section>
-
-    <!-- 🔹 روابط الصفحات الأخرى -->
-    <div class="sections">
-        <a href="landmarks.html">🏜️ استكشاف المعالم</a>
-        <a href="services.html">🛎️ خدمات السياحة</a>
-        <a href="contact.html">📞 اتصل بنا</a>
-    </div>
-
-    <!-- 🔹 زر العودة للأعلى -->
-    <button onclick="scrollToTop()" id="scrollTopBtn">⬆️</button>
-
-    <!-- 🔹 الفوتر -->
-    <footer>
-        <p>جميع الحقوق محفوظة &copy; 2025 بشر العيسى</p>
-        <div class="social-media">
-            <a href="https://twitter.com" target="_blank">🐦 تويتر</a>
-            <a href="https://instagram.com" target="_blank">📸 إنستجرام</a>
-            <a href="https://whatsapp.com" target="_blank">📲 واتساب</a>
-        </div>
-    </footer>
 
 </body>
 </html>
