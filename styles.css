@@ -1,21 +1,43 @@
-/* 🔹 تحسين الخلفية */
 body {
-    font-family: 'Tajawal', sans-serif;
-    background: linear-gradient(to right, #f5e1c0, #e1c0a5);
-    text-align: right;
+    font-family: Arial, sans-serif;
     direction: rtl;
+    text-align: right;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4;
 }
 
-/* 🔹 تحسين عرض السلايدر */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0066cc;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.language-switch button {
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .slider-container {
     position: relative;
-    max-width: 90%;
-    margin: auto;
+    max-width: 100%;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .slider {
@@ -32,55 +54,53 @@ body {
     display: block;
 }
 
-/* 🔹 تحسين قسم "عن حائل" */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 .about-hail {
     text-align: center;
-    margin: 40px auto;
-    max-width: 800px;
-    background: white;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    background: white;
 }
 
-.about-hail h2 {
-    color: #7a4c2f;
-    font-size: 24px;
-    margin-bottom: 10px;
+.sections {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
-.about-hail p {
-    font-size: 18px;
-    color: #333;
-    line-height: 1.6;
-}
-
-.about-hail .about-img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-top: 15px;
-}
-
-/* 🔹 تحسين أزرار التصفح */
-nav {
-    text-align: center;
-    background: #7a4c2f;
-    padding: 15px;
-    border-radius: 10px;
-}
-nav a {
-    font-size: 20px;
-    margin: 15px;
+.sections a {
     text-decoration: none;
+    background: #0066cc;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.2);
-    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
-nav a:hover {
-    transform: scale(1.2);
-    background: rgba(255, 255, 255, 0.4);
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: white;
+}
+
+.social-media a {
+    margin: 0 10px;
+    color: white;
 }
