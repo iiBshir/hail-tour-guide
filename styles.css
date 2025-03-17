@@ -1,21 +1,3 @@
-body {
-    font-family: Arial, sans-serif;
-    direction: rtl;
-    text-align: right;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0066cc;
-    color: white;
-    padding: 10px;
-}
-
 /* تحسين تنسيق الـ Navbar */
 nav {
     background: #0066cc;
@@ -26,7 +8,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center; /* يجعل العناصر في المنتصف */
+    justify-content: center;
     align-items: center;
     gap: 20px;
     padding: 0;
@@ -50,81 +32,87 @@ nav a:hover {
     border-radius: 5px;
 }
 
-
-.language-switch button {
-    border: none;
-    background: transparent;
-    font-size: 16px;
-    cursor: pointer;
+/* تحسين تصميم الصفحة */
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.slider-container {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    width: 100%;
-    display: none;
-}
-
-.active {
-    display: block;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-.about-hail {
+.container {
     text-align: center;
     padding: 20px;
     background: white;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sections {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+h1 {
+    color: #333;
 }
 
-.sections a {
+p {
+    font-size: 18px;
+}
+
+/* زر العودة */
+.back-button {
+    display: inline-block;
     text-decoration: none;
     background: #0066cc;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.3s ease-in-out;
 }
 
+.back-button:hover {
+    background: #004c99;
+}
+
+/* تحسين تذييل الصفحة */
 footer {
     text-align: center;
     padding: 10px;
     background: #333;
     color: white;
+    margin-top: 20px;
 }
 
 .social-media a {
     margin: 0 10px;
     color: white;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
+/* زر تغيير اللغة */
+.language-switch {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.language-switch button {
+    border: none;
+    background: #0066cc;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.language-switch button:hover {
+    background: #004c99;
 }
