@@ -3,61 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حائل - الصفحة الرئيسية</title>
+    <title>حائل - الدليل السياحي</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- القائمة الرئيسية مع قائمة منسدلة للغة -->
+    <!-- شريط التنقل -->
     <header>
+        <div class="logo">حائل السياحية</div>
+        
+        <!-- قائمة اللغة -->
+        <div class="language-dropdown">
+            <button class="dropbtn">🌍 اللغة</button>
+            <div class="dropdown-content">
+                <a href="#" onclick="setLanguage('ar')">🇸🇦 العربية</a>
+                <a href="#" onclick="setLanguage('en')">🇬🇧 English</a>
+            </div>
+        </div>
+
+        <!-- القائمة المنسدلة -->
+        <div class="menu-toggle">&#9776;</div>
         <nav>
-            <ul class="navbar">
+            <ul class="nav-menu">
                 <li><a href="index.html">الرئيسية</a></li>
                 <li><a href="about-hail.html">عن حائل</a></li>
                 <li><a href="landmarks.html">المعالم</a></li>
                 <li><a href="services.html">الخدمات</a></li>
                 <li><a href="contact.html">اتصل بنا</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">🌍 اللغة</a>
-                    <div class="dropdown-content">
-                        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-                        <button onclick="setLanguage('en')">🇬🇧 English</button>
-                    </div>
-                </li>
             </ul>
         </nav>
     </header>
 
-    <!-- سلايدر متحرك للصور -->
+    <!-- سلايدر الصور -->
     <div class="slider-container">
         <div class="slider">
-            <img class="slide active" src="image1.jpg" alt="حائل">
-            <img class="slide" src="image2.jpg" alt="جبال حائل">
-            <img class="slide" src="image3.jpg" alt="صحراء النفود">
+            <img src="image5.jpg" class="slide">
+            <img src="image6.jpg" class="slide">
+            <img src="image7.jpg" class="slide">
         </div>
-        <button class="prev" onclick="prevSlide()">&#10094;</button>
-        <button class="next" onclick="nextSlide()">&#10095;</button>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 
     <!-- قسم المناظر الطبيعية -->
-    <section class="content-section">
-        <h2>المناظر الطبيعية</h2>
-        <p>تتميز حائل بجمال طبيعتها الفريد، حيث تمتزج الجبال الشامخة مع الصحراء الذهبية، مما يخلق مناظر طبيعية خلابة تأسر القلوب.</p>
-        <div class="image-gallery">
-            <img src="image5.jpg" alt="جبل أجا">
-            <img src="image6.jpg" alt="صحراء النفود">
-        </div>
+    <section class="nature-section">
+        <h2>🌿 المناظر الطبيعية</h2>
+        <p>تشتهر منطقة حائل بطبيعتها الخلابة التي تتنوع بين الجبال الشاهقة والسهول الواسعة والصحاري الذهبية. من أشهر المناطق الطبيعية فيها جبل سلمى وجبل أجا وصحراء النفود الكبير التي تجذب الزوار والمغامرين للاستمتاع بالتخييم واستكشاف المعالم الطبيعية الفريدة.</p>
+        <img src="image5.jpg" alt="مناظر طبيعية">
+        <img src="image6.jpg" alt="مناظر طبيعية">
     </section>
 
     <!-- قسم الرحالة -->
-    <section class="content-section">
-        <h2>الرحالة</h2>
-        <p>تعد حائل وجهة مفضلة للرحالة والمستكشفين، فقد زارها العديد من الرحالة التاريخيين مثل ابن بطوطة وكتبوا عن جمالها وأهلها الكرماء.</p>
-        <div class="image-gallery">
-            <img src="image7.jpg" alt="رحالة في حائل">
-        </div>
+    <section class="traveler-section">
+        <h2>🌍 الرحالة</h2>
+        <p>حائل وجهة تاريخية زارها العديد من الرحالة المشهورين من مختلف أنحاء العالم، الذين انبهروا بجمالها الطبيعي وكرم سكانها. من أشهر الرحالة الذين زاروها الرحالة البريطاني تشارلز داوتي والرحالة السويسري جون لويس بوركهارت.</p>
+        <img src="image7.jpg" alt="رحالة">
     </section>
 
     <script src="script.js"></script>
+
 </body>
 </html>
