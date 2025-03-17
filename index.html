@@ -9,14 +9,26 @@
 </head>
 <body>
 
-    <!-- القائمة المنسدلة -->
+    <!-- شريط التنقل -->
     <nav>
-        <ul class="dropdown-menu">
+        <ul class="menu">
             <li><a href="index.html">الرئيسية</a></li>
-            <li><a href="about-hail.html">عن حائل</a></li>
-            <li><a href="attractions.html">المعالم</a></li>
-            <li><a href="services.html">الخدمات</a></li>
-            <li><a href="contact.html">اتصل بنا</a></li>
+            <li class="dropdown">
+                <a href="#">القائمة ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="about-hail.html">عن حائل</a></li>
+                    <li><a href="attractions.html">المعالم</a></li>
+                    <li><a href="services.html">الخدمات</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </li>
+            <li class="dropdown language-dropdown">
+                <a href="#">🌍 اللغة ▾</a>
+                <ul class="dropdown-content">
+                    <li><a href="#" onclick="setLanguage('ar')">🇸🇦 العربية</a></li>
+                    <li><a href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 
@@ -33,16 +45,18 @@
 
     <!-- قسم المناظر الطبيعية -->
     <section class="nature">
-        <h2>🌿 المناظر الطبيعية</h2>
-        <p>تتمتع حائل بمناظر طبيعية رائعة تشمل الجبال والصحاري والوديان المذهلة، مما يجعلها وجهة مميزة لعشاق الطبيعة والمغامرات.</p>
-        <img src="image5.jpg" class="featured-image">
-        <img src="image6.jpg" class="featured-image">
+        <h2 id="nature-title">🌿 المناظر الطبيعية</h2>
+        <p id="nature-text">تتمتع حائل بمناظر طبيعية خلابة تشمل الجبال والصحاري والوديان، مما يجعلها وجهة رائعة لمحبي الطبيعة والمغامرة.</p>
+        <div class="image-gallery">
+            <img src="image5.jpg" class="featured-image">
+            <img src="image6.jpg" class="featured-image">
+        </div>
     </section>
 
     <!-- قسم الرحالة -->
     <section class="explorers">
-        <h2>🌍 الرحالة</h2>
-        <p>مرَّ العديد من الرحالة على منطقة حائل عبر التاريخ، مستكشفين طبيعتها الفريدة وثقافتها العريقة التي تعكس روح الضيافة العربية.</p>
+        <h2 id="explorers-title">🌍 الرحالة</h2>
+        <p id="explorers-text">شهدت حائل مرور العديد من الرحالة عبر العصور، مستكشفين طبيعتها الفريدة وثقافتها الغنية التي تعكس روح الضيافة العربية.</p>
         <img src="image7.jpg" class="featured-image">
     </section>
 
@@ -51,6 +65,7 @@
         <div class="social-media">
             <a href="https://twitter.com" target="_blank">🐦 تويتر</a>
             <a href="https://instagram.com" target="_blank">📸 إنستقرام</a>
+            <a href="https://wa.me/966534194016" target="_blank">💬 واتساب</a>
         </div>
     </footer>
 
