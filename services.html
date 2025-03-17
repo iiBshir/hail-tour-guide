@@ -3,50 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">خدماتنا</title>
+    <title>الخدمات</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
-    </div>
-
-    <div class="container">
-        <h1 id="title">خدماتنا</h1>
+    <!-- شريط التنقل -->
+    <nav>
         <ul>
-            <li>🏜️ تنظيم جولات سياحية داخل حائل وخارجها.</li>
-            <li>🏕️ تجربة تخييم وسط الطبيعة الخلابة.</li>
-            <li>📷 خدمة تصوير احترافي خلال الجولات.</li>
-            <li>🚗 توفير وسائل نقل مريحة خلال الجولات.</li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about-hail.html">عن حائل</a></li>
+            <li><a href="landmarks.html">المعالم</a></li>
+            <li><a href="services.html">الخدمات</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
-        <a href="index.html">⬅️ العودة</a>
-    </div>
+    </nav>
 
-    <script>
-        const translations = {
-            ar: { title: "خدماتنا", description: "نقدم مجموعة من الخدمات السياحية المميزة في حائل." },
-            en: { title: "Our Services", description: "We offer a range of premium tourism services in Hail." }
-        };
+    <h1>خدماتنا</h1>
 
-        function setLanguage(lang) {
-            localStorage.setItem('selectedLanguage', lang);
-            document.documentElement.lang = lang;
-            document.getElementById("title").innerText = translations[lang].title;
-        }
+    <ul class="services-list">
+        <li>📍 تنظيم جولات سياحية داخل حائل وخارجها.</li>
+        <li>🏕️ تجربة التخييم وسط الطبيعة الخلابة.</li>
+        <li>📸 خدمة تصوير احترافي خلال الجولات.</li>
+        <li>🚗 توفير وسائل نقل مريحة خلال الجولات.</li>
+    </ul>
 
-        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
-    </script>
+    <a href="index.html">⬅️ العودة</a>
 
 </body>
-    <nav>
-    <ul>
-        <li><a href="index.html">الرئيسية</a></li>
-        <li><a href="about-hail.html">عن حائل</a></li>
-        <li><a href="attractions.html">المعالم</a></li>
-        <li><a href="services.html">الخدمات</a></li>
-        <li><a href="contact.html">اتصل بنا</a></li>
-    </ul>
-</nav>
-
 </html>
