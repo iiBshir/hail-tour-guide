@@ -3,71 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرشد سياحي في حائل</title>
+    <title>حائل - الصفحة الرئيسية</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <!-- شريط التنقل -->
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">الرئيسية</a></li>
-            <li class="dropdown">
-                <a href="#">القائمة ▾</a>
-                <ul class="dropdown-content">
-                    <li><a href="about-hail.html">عن حائل</a></li>
-                    <li><a href="attractions.html">المعالم</a></li>
-                    <li><a href="services.html">الخدمات</a></li>
-                    <li><a href="contact.html">اتصل بنا</a></li>
-                </ul>
-            </li>
-            <li class="dropdown language-dropdown">
-                <a href="#">🌍 اللغة ▾</a>
-                <ul class="dropdown-content">
-                    <li><a href="#" onclick="setLanguage('ar')">🇸🇦 العربية</a></li>
-                    <li><a href="#" onclick="setLanguage('en')">🇬🇧 English</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
+    <!-- القائمة الرئيسية مع قائمة منسدلة للغة -->
+    <header>
+        <nav>
+            <ul class="navbar">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about-hail.html">عن حائل</a></li>
+                <li><a href="places.html">المعالم</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">🌍 اللغة</a>
+                    <div class="dropdown-content">
+                        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+                        <button onclick="setLanguage('en')">🇬🇧 English</button>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- السلايدر -->
+    <!-- سلايدر متحرك للصور -->
     <div class="slider-container">
         <div class="slider">
-            <img src="image1.jpg" class="slide active">
-            <img src="image2.jpg" class="slide">
-            <img src="image3.jpg" class="slide">
+            <img class="slide active" src="image1.jpg" alt="حائل">
+            <img class="slide" src="image2.jpg" alt="جبال حائل">
+            <img class="slide" src="image3.jpg" alt="صحراء النفود">
         </div>
-        <button class="prev" onclick="changeSlide(-1)">❮</button>
-        <button class="next" onclick="changeSlide(1)">❯</button>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
     </div>
 
     <!-- قسم المناظر الطبيعية -->
-    <section class="nature">
-        <h2 id="nature-title">🌿 المناظر الطبيعية</h2>
-        <p id="nature-text">تتمتع حائل بمناظر طبيعية خلابة تشمل الجبال والصحاري والوديان، مما يجعلها وجهة رائعة لمحبي الطبيعة والمغامرة.</p>
+    <section class="content-section">
+        <h2>المناظر الطبيعية</h2>
+        <p>تتميز حائل بجمال طبيعتها الفريد، حيث تمتزج الجبال الشامخة مع الصحراء الذهبية، مما يخلق مناظر طبيعية خلابة تأسر القلوب.</p>
         <div class="image-gallery">
-            <img src="image5.jpg" class="featured-image">
-            <img src="image6.jpg" class="featured-image">
+            <img src="image5.jpg" alt="جبل أجا">
+            <img src="image6.jpg" alt="صحراء النفود">
         </div>
     </section>
 
     <!-- قسم الرحالة -->
-    <section class="explorers">
-        <h2 id="explorers-title">🌍 الرحالة</h2>
-        <p id="explorers-text">شهدت حائل مرور العديد من الرحالة عبر العصور، مستكشفين طبيعتها الفريدة وثقافتها الغنية التي تعكس روح الضيافة العربية.</p>
-        <img src="image7.jpg" class="featured-image">
+    <section class="content-section">
+        <h2>الرحالة</h2>
+        <p>تعد حائل وجهة مفضلة للرحالة والمستكشفين، فقد زارها العديد من الرحالة التاريخيين مثل ابن بطوطة وكتبوا عن جمالها وأهلها الكرماء.</p>
+        <div class="image-gallery">
+            <img src="image7.jpg" alt="رحالة في حائل">
+        </div>
     </section>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © 2025 بشر العيسى</p>
-        <div class="social-media">
-            <a href="https://twitter.com" target="_blank">🐦 تويتر</a>
-            <a href="https://instagram.com" target="_blank">📸 إنستقرام</a>
-            <a href="https://wa.me/966534194016" target="_blank">💬 واتساب</a>
-        </div>
-    </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>
