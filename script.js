@@ -1,18 +1,18 @@
 let index = 0;
-const slides = document.querySelectorAll(".slide");
 
-function showSlide(i) {
-    slides.forEach(slide => slide.classList.remove("active"));
-    slides[i].classList.add("active");
+function showSlide(n) {
+    let slides = document.querySelectorAll(".slide");
+    slides.forEach(slide => slide.style.display = "none");
+    slides[n].style.display = "block";
 }
 
-function changeSlide(step) {
-    index += step;
+function changeSlide(n) {
+    let slides = document.querySelectorAll(".slide");
+    index += n;
     if (index >= slides.length) index = 0;
     if (index < 0) index = slides.length - 1;
     showSlide(index);
 }
 
-setInterval(() => changeSlide(1), 3000); // تغيير تلقائي كل 3 ثوانٍ
-
-document.addEventListener("DOMContentLoaded", () => showSlide(index));
+setInterval(() => changeSlide(1), 3000);
+showSlide(index);
