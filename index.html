@@ -9,19 +9,35 @@
 </head>
 <body data-page="home">
 
+    <!-- 🔹 زر اختيار اللغة -->
     <div class="language-switch">
         <button onclick="setLanguage('ar')">🇸🇦</button>
         <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
-    <header>
-        <img src="hail-banner.jpg" alt="حائل" class="banner">
-        <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
-        <p id="description">اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة.</p>
-    </header>
+    <!-- 🔹 عرض السلايدر -->
+    <div class="slider-container">
+        <div class="slider">
+            <img src="image1.jpg" class="slide active" alt="معلم سياحي في حائل">
+            <img src="image2.jpg" class="slide" alt="جبال حائل">
+            <img src="image3.jpg" class="slide" alt="النقوش الثمودية">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">⏮️</button>
+        <button class="next" onclick="changeSlide(1)">⏭️</button>
+    </div>
 
+    <!-- 🔹 معلومات عن حائل -->
+    <section class="about-hail">
+        <h2 id="about-title">عن حائل</h2>
+        <p id="about-description">
+            حائل هي واحدة من أقدم المناطق في المملكة العربية السعودية، حيث تضم نقوشًا ثمودية تاريخية وتراثًا ثقافيًا غنيًا.
+            تشتهر بجمال طبيعتها الصحراوية وجبالها الفريدة، مثل جبال أجا وسلمى، بالإضافة إلى معالمها السياحية الشهيرة.
+        </p>
+        <img src="hail-banner.jpg" alt="حائل" class="about-img">
+    </section>
+
+    <!-- 🔹 روابط الأقسام الرئيسية -->
     <nav>
-        <a href="about-hail.html">🏜️</a>
         <a href="landmarks.html">🏰</a>
         <a href="tours.html">🚶‍♂️</a>
         <a href="contact.html">📞</a>
