@@ -3,39 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">المعالم السياحية</title>
+    <title>المعالم السياحية في حائل</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
-        <button onclick="setLanguage('en')">🇬🇧 English</button>
-    </div>
-
-    <div class="container">
-        <h1 id="title">المعالم السياحية</h1>
+    <!-- شريط التنقل -->
+    <nav>
         <ul>
-            <li>🏜️ <b>مدينة جبة:</b> تحتوي على نقوش صخرية تاريخية.</li>
-            <li>🏕️ <b>جبال أجا وسلمى:</b> مثالية للتخييم والمغامرات.</li>
-            <li>🏰 <b>قصر القشلة:</b> موقع تاريخي يعود للعهد العثماني.</li>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="about-hail.html">عن حائل</a></li>
+            <li><a href="landmarks.html">المعالم</a></li>
+            <li><a href="services.html">الخدمات</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
         </ul>
-        <a href="index.html">⬅️ العودة</a>
-    </div>
+    </nav>
 
-    <script>
-        const translations = {
-            ar: { title: "المعالم السياحية", description: "استمتع بجولات سياحية لاكتشاف المعالم الأثرية والطبيعية في حائل." },
-            en: { title: "Tourist Attractions", description: "Enjoy guided tours to explore the historical and natural landmarks of Hail." }
-        };
+    <h1>المعالم السياحية</h1>
 
-        function setLanguage(lang) {
-            localStorage.setItem('selectedLanguage', lang);
-            document.documentElement.lang = lang;
-            document.getElementById("title").innerText = translations[lang].title;
-        }
+    <section class="landmark">
+        <img src="jubbah.jpg" alt="نقوش ثمودية في جبة">
+        <div>
+            <h2>مدينة جبة</h2>
+            <p>تحتوي على نقوش صخرية تاريخية تعود إلى آلاف السنين، وهي واحدة من أبرز المعالم الأثرية في المملكة.</p>
+        </div>
+    </section>
 
-        setLanguage(localStorage.getItem('selectedLanguage') || 'ar');
-    </script>
+    <section class="landmark">
+        <img src="ajawh.jpg" alt="جبل أجا وسلمى">
+        <div>
+            <h2>جبل أجا وسلمى</h2>
+            <p>معلم شهير في حائل، يرتبط بالعديد من الأساطير العربية ويعد مكانًا مثاليًا للمغامرات والتسلق.</p>
+        </div>
+    </section>
+
+    <section class="landmark">
+        <img src="qasr.jpg" alt="قصر القشلة">
+        <div>
+            <h2>قصر القشلة</h2>
+            <p>موقع تاريخي رائع يعكس تاريخ المنطقة ويعود للعهد العثماني، وهو مفتوح للزوار لاكتشاف تاريخه العريق.</p>
+        </div>
+    </section>
+
+    <a href="index.html">⬅️ العودة</a>
 
 </body>
 </html>
