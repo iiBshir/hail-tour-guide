@@ -7,37 +7,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body data-page="home">
 
-    <!-- 🔹 زر اختيار اللغة -->
     <div class="language-switch">
         <button onclick="setLanguage('ar')">🇸🇦</button>
         <button onclick="setLanguage('en')">🇬🇧</button>
     </div>
 
-    <!-- 🔹 عرض السلايدر -->
-    <div class="slider-container">
-        <div class="slider">
-            <img src="image1.jpg" class="slide active" alt="صورة 1">
-            <img src="image2.jpg" class="slide" alt="صورة 2">
-            <img src="image3.jpg" class="slide" alt="صورة 3">
-        </div>
-        <button class="prev" onclick="changeSlide(-1)">⏮️</button>
-        <button class="next" onclick="changeSlide(1)">⏭️</button>
-    </div>
-
-    <!-- 🔹 روابط الأقسام الرئيسية -->
-    <div class="container">
+    <header>
+        <img src="hail-banner.jpg" alt="حائل" class="banner">
         <h1 id="title">مرشد سياحي في حائل - بشر العيسى</h1>
         <p id="description">اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة.</p>
+    </header>
+
+    <nav>
         <a href="about-hail.html">🏜️</a>
-        <a href="about-me.html">👤</a>
+        <a href="landmarks.html">🏰</a>
         <a href="tours.html">🚶‍♂️</a>
         <a href="contact.html">📞</a>
-    </div>
-
-    <!-- 🔹 زر العودة للأعلى -->
-    <button onclick="scrollToTop()" id="scrollTopBtn">⬆️</button>
+    </nav>
 
     <script src="script.js"></script>
 
