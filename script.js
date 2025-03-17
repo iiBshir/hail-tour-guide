@@ -1,29 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const translations = {
-        ar: {
-            title: "مرشد سياحي في حائل - بشر العيسى",
-            description: "اكتشف حائل مع أفضل مرشد سياحي، جولات ممتعة لاستكشاف التراث والثقافة.",
-            aboutHail: "حائل هي واحدة من أقدم المناطق في المملكة العربية السعودية، حيث تضم نقوشًا ثمودية تاريخية وتراثًا ثقافيًا غنيًا.",
-        },
-        en: {
-            title: "Tour Guide in Hail - Bisher Al-Eisa",
-            description: "Explore Hail with the best tour guide, enjoy amazing heritage and cultural tours.",
-            aboutHail: "Hail is one of the oldest regions in Saudi Arabia, featuring Thamudic inscriptions and a rich cultural heritage.",
-        }
-    };
+    let index = 0;
+    const slides = document.querySelectorAll(".slide");
 
-    function setLanguage(lang) {
-        localStorage.setItem('selectedLanguage', lang);
-        document.documentElement.lang = lang;
-
-        document.getElementById("title").innerText = translations[lang].title;
-        document.getElementById("description").innerText = translations[lang].description;
-        document.getElementById("about-title").innerText = "عن حائل";
-        document.getElementById("about-description").innerText = translations[lang].aboutHail;
+    function showSlide(n) {
+        slides.forEach(slide => slide.classList.remove("active"));
+        slides[n].classList.add("active");
     }
 
-    const savedLang = localStorage.getItem('selectedLanguage') || 'ar';
-    setLanguage(savedLang);
+    function changeSlide(n) {
+        index += n;
+        if (index >= slides.length) index = 0;
+        if (index < 0) index = slides.length - 1;
+        showSlide(index);
+    }
 
-    window.setLanguage = setLanguage;
+    setInterval(() => changeSlide(1), 3000);
 });
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
