@@ -7,35 +7,28 @@ body {
     background-color: #f4f4f4;
 }
 
-/* تحسين القائمة المنسدلة */
-nav {
+/* القائمة المنسدلة */
+.menu {
     background: #0066cc;
     padding: 10px;
-    text-align: center;
-}
-
-nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-nav ul li {
-    display: inline-block;
+.menu li {
     position: relative;
 }
 
-nav ul li a {
+.menu a {
     color: white;
     padding: 10px 20px;
-    display: block;
     text-decoration: none;
-}
-
-nav ul li:hover > ul {
     display: block;
 }
 
-nav ul ul {
+.dropdown-content {
     display: none;
     position: absolute;
     background: #004c99;
@@ -45,8 +38,23 @@ nav ul ul {
     text-align: center;
 }
 
-nav ul ul li {
+.dropdown:hover .dropdown-content {
     display: block;
+}
+
+/* تحسين زر تغيير اللغة */
+.language-dropdown {
+    position: relative;
+}
+
+.language-dropdown .dropdown-content {
+    left: -10px;
+    width: 120px;
+    background: #0066cc;
+}
+
+.language-dropdown a {
+    font-weight: bold;
 }
 
 /* تحسين السلايدر */
@@ -85,13 +93,14 @@ nav ul ul li {
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* تحسين الصور الجديدة */
+/* تحسين عرض الصور */
 .featured-image {
-    width: 50%;
+    width: 45%;
     border-radius: 10px;
     margin: 10px;
 }
 
+/* تحسين الفوتر */
 footer {
     background: #333;
     color: white;
