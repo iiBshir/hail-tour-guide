@@ -1,60 +1,87 @@
-/* 🔹 تنسيق السلايدر */
-.slider-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
+/* الخطوط والخلفية */
+body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: #f5e1c0;
+    text-align: right;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
 }
 
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
+/* تحسين عرض الصور في الصفحة الرئيسية */
+.banner {
     width: 100%;
-    display: none;
-}
-
-.active {
+    max-height: 400px;
+    object-fit: cover; /* تصغير الصورة لتناسب الشاشة */
     display: block;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
+/* تباعد وتحسين النصوص */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* تحسين أزرار تغيير اللغة */
+.language-switch {
+    text-align: center;
+    margin: 10px;
+}
+.language-switch button {
     padding: 10px 15px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 20px;
-    border-radius: 50%;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.prev:hover, .next:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-/* 🔹 زر العودة للأعلى */
-#scrollTopBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    padding: 10px;
+    border: none;
     background-color: #7a4c2f;
     color: white;
-    border: none;
     border-radius: 5px;
-    cursor: pointer;
-    display: none;
+    margin: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.language-switch button:hover {
+    background-color: #9b6d48;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#scrollTopBtn:hover {
-    background-color: #9b6d48;
+/* تحسين شريط التصفح */
+nav {
+    text-align: center;
+    background: #7a4c2f;
+    padding: 15px;
+}
+nav a {
+    font-size: 25px;
+    margin: 15px;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+nav a:hover {
+    transform: scale(1.2);
+    color: #f5e1c0;
+}
+
+/* تحسين الأزرار */
+.back-btn {
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #7a4c2f;
+    color: white;
+    text-decoration: none;
+    margin: 20px auto;
+    transition: 0.3s;
+}
+.back-btn:hover {
+    background: #9b6d48;
+    transform: scale(1.1);
 }
