@@ -1,49 +1,73 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="title">مرشد سياحي في حائل | بشر العيسى</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>مرشد سياحي في حائل | بشر العيسى</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
-<body data-page="home">
+<body>
 
-    <!-- 🔹 زر اختيار اللغة -->
-    <div class="language-switch">
-        <button onclick="setLanguage('ar')">🇸🇦</button>
-        <button onclick="setLanguage('en')">🇬🇧</button>
-    </div>
+    <!-- 🔹 الشريط العلوي -->
+    <header>
+        <div class="logo">
+            <h1>مرشد سياحي في حائل</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about-hail.html">عن حائل</a></li>
+                <li><a href="landmarks.html">المعالم</a></li>
+                <li><a href="services.html">الخدمات</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch">
+            <button onclick="setLanguage('ar')">🇸🇦 العربية</button>
+            <button onclick="setLanguage('en')">🇬🇧 English</button>
+        </div>
+    </header>
 
     <!-- 🔹 السلايدر -->
     <div class="slider-container">
         <div class="slider">
-            <img src="image1.jpg" class="slide active" alt="معلم سياحي في حائل">
-            <img src="image2.jpg" class="slide" alt="جبال حائل">
-            <img src="image3.jpg" class="slide" alt="النقوش الثمودية">
+            <img src="images/hail1.jpg" class="slide active" alt="حائل">
+            <img src="images/hail2.jpg" class="slide" alt="حائل 2">
+            <img src="images/hail3.jpg" class="slide" alt="حائل 3">
         </div>
         <button class="prev" onclick="changeSlide(-1)">⏮️</button>
         <button class="next" onclick="changeSlide(1)">⏭️</button>
     </div>
 
-    <!-- 🔹 عن حائل -->
+    <!-- 🔹 قسم عن حائل -->
     <section class="about-hail">
-        <h2 id="about-title">عن حائل</h2>
-        <p id="about-description">
-            حائل هي واحدة من أقدم المناطق في المملكة العربية السعودية، حيث تضم نقوشًا ثمودية تاريخية وتراثًا ثقافيًا غنيًا.
-            تشتهر بجمال طبيعتها الصحراوية وجبالها الفريدة، مثل جبال أجا وسلمى، بالإضافة إلى معالمها السياحية الشهيرة.
+        <h2>عن حائل</h2>
+        <p>
+            تقع منطقة حائل في منتصف الجزء الشمالي الغربي من المملكة العربية السعودية، وتمتد من النفود الكبير شمالًا إلى حرة خيبر جنوبًا.
+            تشتهر بجبل أجا وسلمى، وتحتوي على نقوش ثمودية تعود إلى آلاف السنين، مما يجعلها وجهة سياحية غنية بالتاريخ والثقافة.
         </p>
-        <img src="hail-banner.jpg" alt="حائل" class="about-img">
     </section>
 
-    <!-- 🔹 روابط الأقسام -->
-    <nav>
-        <a href="landmarks.html">🏰 المعالم السياحية</a>
-        <a href="tours.html">🚶‍♂️ الجولات السياحية</a>
-        <a href="contact.html">📞 تواصل معي</a>
-    </nav>
+    <!-- 🔹 روابط الصفحات الأخرى -->
+    <div class="sections">
+        <a href="landmarks.html">🏜️ استكشاف المعالم</a>
+        <a href="services.html">🛎️ خدمات السياحة</a>
+        <a href="contact.html">📞 اتصل بنا</a>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- 🔹 زر العودة للأعلى -->
+    <button onclick="scrollToTop()" id="scrollTopBtn">⬆️</button>
+
+    <!-- 🔹 الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2025 بشر العيسى</p>
+        <div class="social-media">
+            <a href="https://twitter.com" target="_blank">🐦 تويتر</a>
+            <a href="https://instagram.com" target="_blank">📸 إنستجرام</a>
+            <a href="https://whatsapp.com" target="_blank">📲 واتساب</a>
+        </div>
+    </footer>
 
 </body>
 </html>
